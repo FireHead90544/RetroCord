@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RetroCord
+
+Discord, re-designed in 90s retro-style for Codedex Mini Holiday Hackathon 2024.
 
 ## Getting Started
 
