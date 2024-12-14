@@ -21,7 +21,7 @@ const DEFAULT_DATA = {
           },
           {
             2: {
-              content: "Please drop a like, if you liked it!",
+              content: "Biee :)",
               user: "yay.less.gooo1",
               timestamp: 1627891460,
             },
