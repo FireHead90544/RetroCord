@@ -1,99 +1,163 @@
-/* components/css/ChannelView.module.css */
 .container {
     display: grid;
     grid-template-columns: 200px 250px 1fr;
-    gap: 10px;
+    gap: 20px;
     padding: 20px;
-    background-color: #C0C0C0;
+    background-color: #c0c0c0;
     min-height: 100vh;
     font-family: 'MS Sans Serif', sans-serif;
-  }
-  
-  .serverList, .channelList {
+}
+
+.serverList, .channelList {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-  }
-  
-  .serverItem, .channelItem {
-    padding: 8px;
+    gap: 10px;
+}
+
+.serverItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid black;
     cursor: pointer;
+    text-decoration: none;
+    color: green;
+    transition: background-color 0.2s;
+}
+
+.serverItem:hover, .serverItem.active {
+    background-color: #800080;
+    color: #ffffff;
+}
+
+.serverItem:hover p, .serverItem.active p {
+    color: #c0c0c0;
+}
+
+.serverIcon {
+    width: 40px;
+    height: 40px;
+    background-color: #0000a0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.serverInfo h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.serverInfo p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #666666;
+}
+
+.channelItem {
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid black;
+    cursor: pointer;
     text-decoration: none;
-  }
-  
-  .serverItem:hover, .channelItem:hover {
+    color: green;
+}
+
+.channelItem:hover, .channelItem.active {
     background-color: #800080;
-    color: white;
-  }
-  
-  .active {
-    background-color: #800080;
-    color: white;
-  }
-  
-  .chatContainer {
+    color: #ffffff;
+}
+
+.chatContainer {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 100px);
-  }
-  
-  .messageList {
+}
+
+.messageList {
     flex: 1;
     overflow-y: auto;
     padding: 10px;
     background-color: white;
-    border: 1px solid black;
+    border: 2px solid black;
     margin-bottom: 10px;
-  }
-  
-  .message {
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.noMessages {
+    text-align: center;
+    color: #666666;
+    padding: 20px;
+    font-style: italic;
+}
+
+.message {
     margin-bottom: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px dotted #C0C0C0;
-  }
-  
-  .messageHeader {
+    border-bottom: 1px dotted #c0c0c0;
+}
+
+.messageHeader {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 4px;
-  }
-  
-  .username {
+    gap: 8px;
+}
+
+.username {
     font-weight: bold;
-  }
-  
-  .timestamp {
+    color: #0000a0;
+}
+
+.timestamp {
     color: #666666;
     font-size: 12px;
-  }
-  
-  .inputContainer {
+}
+
+.messageContent {
+    margin-top: 4px;
+    color: #000000;
+}
+
+.inputContainer {
     display: flex;
     gap: 10px;
-  }
-  
-  .messageInput {
+}
+
+.messageInput {
     flex: 1;
     padding: 8px;
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: white;
-  }
-  
-  .sendButton {
-    background-color: #800080;
-    color: white;
-    border: none;
+    font-family: 'MS Sans Serif', sans-serif;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.sendButton {
     padding: 8px 16px;
+    background-color: #c0c0c0;
+    border: 2px solid black;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-  }
-  
-  .sendButton:hover {
-    background-color: #600060;
-  }
+    color: #000000;
+    font-family: 'MS Sans Serif', sans-serif;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.sendButton:hover:not(:disabled) {
+    background-color: #800080;
+    color: #ffffff;
+}
+
+.sendButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

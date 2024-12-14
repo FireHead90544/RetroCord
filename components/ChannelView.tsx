@@ -1,37 +1,39 @@
+// components/ChannelView.tsx
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from "next/link";
-import { MessageSquare, Users, Send } from 'lucide-react';
+import { MessageSquare, Send } from 'lucide-react';
 import WindowContainer from './WindowContainer';
 import styles from './css/ChannelView.module.css';
+import { setLocalStorage, getLocalStorage } from "@/lib/localStorage";
 
 interface Message {
-  content: string;
-  user: string;
-  timestamp: number;
-}
-
-interface Channel {
-  name: string;
-  messages: Array<{ [key: number]: Message }>;
-}
-
-interface Server {
-  name: string;
-  channels: {
-    [channelId: string]: Channel;
-  };
-}
-
-interface ChannelViewProps {
-  serverId: string;
-  channelId: string;
-  server: Server;
-  channel: Channel;
-  allServers: {
-    [serverId: string]: Server;
-  };
-}
+    content: string;
+    user: string;
+    timestamp: number;
+  }
+  
+  interface Channel {
+    name: string;
+    messages: Array<{ [key: number]: Message }>;
+  }
+  
+  interface Server {
+    name: string;
+    channels: {
+      [channelId: string]: Channel;
+    };
+  }
+  
+  interface ChannelViewProps {
+    serverId: string;
+    channelId: string;
+    server: Server;
+    channel: Channel;
+    allServers: {
+      [serverId: string]: Server;
+    };
+  }
 
 const ChannelView: React.FC<ChannelViewProps> = ({
   serverId,
@@ -41,14 +43,29 @@ const ChannelView: React.FC<ChannelViewProps> = ({
   allServers,
 }) => {
   const [newMessage, setNewMessage] = useState('');
-  const username = localStorage.getItem('username');
+  // Change this to store just the messages for the current channel
+  const [messages, setMessages] = useState(channel.messages);
+  const messageListRef = useRef<HTMLDivElement>(null);
+  const username = localStorage.getItem('username') || 'User';
+
+  // Scroll to bottom when messages change
+  useEffect(() => {
+    if (messageListRef.current) {
+      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  // Update messages when channel changes
+  useEffect(() => {
+    setMessages(channel.messages);
+  }, [channel.messages, channelId]);
 
   const sendMessage = () => {
-    if (!newMessage.trim() || !username) return;
+    if (!newMessage.trim()) return;
 
-    const retrocordData = JSON.parse(localStorage.getItem('retrocordData') || '{}');
     const messageId = Date.now();
     
+    // Create a new message object
     const newMessageObj = {
       [messageId]: {
         content: newMessage,
@@ -57,8 +74,16 @@ const ChannelView: React.FC<ChannelViewProps> = ({
       }
     };
 
-    retrocordData[serverId].channels[channelId].messages.push(newMessageObj);
-    localStorage.setItem('retrocordData', JSON.stringify(retrocordData));
+    // Update local state first for immediate UI update
+    setMessages(prevMessages => [...prevMessages, newMessageObj]);
+
+    // Update localStorage
+    const localData = getLocalStorage('retrocordData');
+    const updatedData = {...localData};
+    updatedData[serverId].channels[channelId].messages = [...messages, newMessageObj];
+    setLocalStorage('retrocordData', updatedData);
+
+    // Clear input
     setNewMessage('');
   };
 
@@ -73,7 +98,13 @@ const ChannelView: React.FC<ChannelViewProps> = ({
               key={sId}
               className={`${styles.serverItem} ${sId === serverId ? styles.active : ''}`}
             >
-              {s.name}
+              <div className={styles.serverIcon}>
+                {s.name[0].toUpperCase()}
+              </div>
+              <div className={styles.serverInfo}>
+                <h3>{s.name}</h3>
+                <p>{Object.keys(s.channels).length} channels</p>
+              </div>
             </Link>
           ))}
         </div>
@@ -98,19 +129,23 @@ const ChannelView: React.FC<ChannelViewProps> = ({
       {/* Chat Window */}
       <WindowContainer title={`#${channel.name}`}>
         <div className={styles.chatContainer}>
-          <div className={styles.messageList}>
-            {channel.messages.flatMap(messageObj => 
-              Object.entries(messageObj).map(([msgId, msg]) => (
-                <div key={msgId} className={styles.message}>
-                  <div className={styles.messageHeader}>
-                    <span className={styles.username}>{msg.user}</span>
-                    <span className={styles.timestamp}>
-                      {new Date(msg.timestamp).toLocaleTimeString()}
-                    </span>
+          <div ref={messageListRef} className={styles.messageList}>
+            {messages.length === 0 ? (
+              <div className={styles.noMessages}>No messages yet. Start the conversation!</div>
+            ) : (
+              messages.map((messageObj, index) => 
+                Object.entries(messageObj).map(([msgId, msg]) => (
+                  <div key={`${msgId}-${index}`} className={styles.message}>
+                    <div className={styles.messageHeader}>
+                      <span className={styles.username}>{msg.user}</span>
+                      <span className={styles.timestamp}>
+                        {new Date(msg.timestamp).toLocaleTimeString()}
+                      </span>
+                    </div>
+                    <div className={styles.messageContent}>{msg.content}</div>
                   </div>
-                  <div className={styles.messageContent}>{msg.content}</div>
-                </div>
-              ))
+                ))
+              )
             )}
           </div>
 
@@ -119,11 +154,15 @@ const ChannelView: React.FC<ChannelViewProps> = ({
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+              onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()}
               placeholder={`Message #${channel.name}`}
               className={styles.messageInput}
             />
-            <button onClick={sendMessage} className={styles.sendButton}>
+            <button 
+              onClick={sendMessage} 
+              className={styles.sendButton}
+              disabled={!newMessage.trim()}
+            >
               <Send size={16} />
             </button>
           </div>
