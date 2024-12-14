@@ -89,7 +89,7 @@ const ChannelView: React.FC<ChannelViewProps> = ({
         flexDirection: "column",
       }}>
         <HeadingLogo onChannelsPage={true} />
-        <WindowContainer title="Servers" style={{ minWidth: "auto", height: "100%" }}>
+        <WindowContainer title="Servers" style={{ minWidth: "auto", maxWidth: "100%", height: "100%" }}>
           <div className={styles.serverList}>
             {Object.entries(allServers).map(([sId, s]) => (
               <Link
@@ -112,8 +112,8 @@ const ChannelView: React.FC<ChannelViewProps> = ({
       <div style={{
           display: "flex",
           width: "100%"
-      }}>
-        <WindowContainer title={`Channels`} style={{ minWidth: "auto" }}>
+      }} className={styles.subcontainer}>
+        <WindowContainer title={`Channels`} style={{ minWidth: "auto", maxWidth: "100%" }}>
           <div className={styles.channelList}>
             {Object.entries(server.channels).map(([cId, c]) => (
               <Link
@@ -128,7 +128,7 @@ const ChannelView: React.FC<ChannelViewProps> = ({
           </div>
         </WindowContainer>
 
-        <WindowContainer title={`#${channel.name}`} style={{ width: "100%" }}>
+        <WindowContainer title={`#${channel.name}`} style={{ maxWidth: "95%", width: "100%" }}>
           <div className={styles.chatContainer}>
             <div ref={messageListRef} className={styles.messageList}>
               {messages.length === 0 ? (

@@ -15,7 +15,7 @@
 }
 
 .channelList {
-  width: 200px;
+  min-width: 200px;
 }
 
 .serverItem {
@@ -155,7 +155,7 @@
   opacity: 0.5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 995px) {
   .container {
     flex-direction: column;
     padding: 10px;
@@ -224,7 +224,11 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 565px) {
+  .subcontainer {
+    flex-direction: column;
+  }
+
   .serverItem,
   .channelItem {
     padding: 6px;
