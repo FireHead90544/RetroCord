@@ -1,0 +1,20 @@
+.counterContainer {
+  background-color: #000;
+  color: lime;
+  padding: 5px 10px;
+  font-family: monospace;
+  text-align: center;
+  margin-bottom: 5px;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.counterText {
+  font-size: 0.8rem;
+}
+
+.counterNumber {
+  font-weight: bold;
+  color: #0f0;
+  margin-left: 5px;
+}
