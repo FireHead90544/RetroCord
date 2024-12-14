@@ -16,7 +16,7 @@ interface ServerLandingProps {
 const ServerLanding: React.FC<ServerLandingProps> = ({ username, servers }) => {
   return (
     <div className={styles.container}>
-      <WindowContainer title={`Welcome, ${username || 'User'}!`}>
+      <WindowContainer title={`${username || 'User'}'s servers`} style={{ minWidth: "50%" }}>
         <div className={styles.serverList}>
           {Object.entries(servers).map(([serverId, server]) => (
             <Link href={`/channels/${serverId}`}

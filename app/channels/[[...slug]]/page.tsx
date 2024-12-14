@@ -5,6 +5,7 @@ import { getLocalStorage } from "@/lib/localStorage";
 import ServerLanding from "@/components/ServerLanding";
 import ChannelView from "@/components/ChannelView";
 import LoadingScreen from "@/components/LoadingScreen";
+import HeadingLogo from "@/components/HeadingLogo";
 
 interface DiscordData {
   [serverId: string]: {
@@ -74,7 +75,16 @@ const ChannelsLanding = ({ params }: { params: Promise<{ slug?: string[] }> }) =
   }
 
   if (route === "@me") {
-    return <ServerLanding username={username} servers={discordData} />;
+    return (
+      <div style={{
+        width: "100%",
+        height: "100%",
+        margin: "auto"
+      }}>
+        <HeadingLogo />
+        <ServerLanding username={username} servers={discordData} />
+      </div>
+    );
   }
 
   if (route?.split("/").length === 2) {

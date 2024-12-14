@@ -1,58 +1,59 @@
-/* components/css/ServerLanding.module.css */
 .container {
-    background-color: #C0C0C0;
-    min-height: 100vh;
-    padding: 20px;
-    font-family: 'MS Sans Serif', sans-serif;
-  }
-  
-  .serverList {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .serverItem {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #FFFFFF;
-    border: 1px solid #000000;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    color: green;
-    text-decoration: none;
-  }
-  
-  .serverItem:hover{
-    background-color: #800080;
-    color: #FFFFFF;
-  }
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'MS Sans Serif', sans-serif;
+}
 
-  .serverItem:hover p {
-    color: #C0C0C0;
-  }
-  
-  .serverIcon {
-    width: 40px;
-    height: 40px;
-    background-color: #0000A0;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-weight: bold;
-  }
-  
-  .serverInfo h3 {
-    margin: 0;
-    font-size: 16px;
-  }
-  
-  .serverInfo p {
-    margin: 4px 0 0;
-    font-size: 12px;
-    color: #666666;
-  }
+.serverList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.serverItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: green;
+  text-decoration: none;
+}
+
+.serverItem:hover {
+  background-color: #800080;
+  color: #FFFFFF;
+}
+
+.serverItem:hover p {
+  color: #C0C0C0;
+}
+
+.serverIcon {
+  width: 40px;
+  height: 40px;
+  background-color: #0000A0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.serverInfo h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.serverInfo p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #666666;
+}
