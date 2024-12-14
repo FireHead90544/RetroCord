@@ -89,7 +89,6 @@ const ChannelView: React.FC<ChannelViewProps> = ({
         flexDirection: "column",
       }}>
         <HeadingLogo onChannelsPage={true} />
-        {/* Server Selection Window */}
         <WindowContainer title="Servers" style={{ minWidth: "auto", height: "100%" }}>
           <div className={styles.serverList}>
             {Object.entries(allServers).map(([sId, s]) => (
@@ -114,7 +113,6 @@ const ChannelView: React.FC<ChannelViewProps> = ({
           display: "flex",
           width: "100%"
       }}>
-        {/* Channel List */}
         <WindowContainer title={`Channels`} style={{ minWidth: "auto" }}>
           <div className={styles.channelList}>
             {Object.entries(server.channels).map(([cId, c]) => (
@@ -124,13 +122,12 @@ const ChannelView: React.FC<ChannelViewProps> = ({
                 className={`${styles.channelItem} ${cId === channelId ? styles.active : ''}`}
               >
                 <MessageSquare size={16} />
-                {c.name}
+                {c.name.replace(" ", "-")}
               </Link>
             ))}
           </div>
         </WindowContainer>
 
-        {/* Chat Window */}
         <WindowContainer title={`#${channel.name}`} style={{ width: "100%" }}>
           <div className={styles.chatContainer}>
             <div ref={messageListRef} className={styles.messageList}>
@@ -173,7 +170,6 @@ const ChannelView: React.FC<ChannelViewProps> = ({
           </div>
         </WindowContainer>
       </div>
-
     </div>
   );
 };
