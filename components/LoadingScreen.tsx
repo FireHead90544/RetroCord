@@ -27,7 +27,7 @@ const LoadingScreen: React.FC<{ title: string }> = ({ title }) => {
     "Our old Partner mascot was an elf named Springle. He recently retired.",
     "You can join up to 100 servers.",
   ];
-  
+
   const randomTip = tips[Math.floor(Math.random() * tips.length)];
 
   return (
@@ -50,9 +50,7 @@ const LoadingScreen: React.FC<{ title: string }> = ({ title }) => {
               <div className={styles.loadingBar}></div>
             </Marquee>
           </div>
-          <p className={styles.message}>
-            {randomTip}
-          </p>
+          <p className={styles.message}>{randomTip}</p>
         </div>
       </WindowContainer>
     </div>

@@ -1,6 +1,6 @@
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #c0c0c0;
+  --foreground: #0a0a0a;
 }
 
 * {
@@ -9,8 +9,22 @@
   margin: 0;
 }
 
-
 body {
   color: var(--foreground);
   background: var(--background);
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #c0c0c0;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
