@@ -3,7 +3,6 @@
   background-color: #ffffff;
   margin: 10px;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
-  width: 400px;
   max-width: 90%;
 }
 
@@ -32,4 +31,10 @@
 
 .windowContent {
   padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .windowContainer {
+    min-width: 400px;
+  }
 }
