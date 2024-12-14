@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import HeadingLogo from '@/components/HeadingLogo'
 import LoadingScreen from '@/components/LoadingScreen'
 
 const AppLoading = () => {
@@ -23,7 +24,18 @@ const AppLoading = () => {
     return () => clearTimeout(timer)
   }, [router])
 
-  return username && <LoadingScreen title={`Welcome, ${username}!`} />
+  return username && (
+    <div style={{
+      display: "flex",
+      flex: 1,
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+    }}>
+      <HeadingLogo />
+      <LoadingScreen title={`Welcome, ${username}!`} />
+    </div>
+  )
 }
 
 export default AppLoading
