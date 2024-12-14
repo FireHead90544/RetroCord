@@ -1,25 +1,29 @@
-import React from 'react';
-import Link from 'next/link';
-import WindowContainer from './WindowContainer';
-import styles from './css/ServerLanding.module.css';
+import React from "react";
+import Link from "next/link";
+import WindowContainer from "./WindowContainer";
+import styles from "./css/ServerLanding.module.css";
 
 interface ServerLandingProps {
-  username: string,
+  username: string;
   servers: {
     [serverId: string]: {
       name: string;
       channels: object;
-    }
-  }
+    };
+  };
 }
 
 const ServerLanding: React.FC<ServerLandingProps> = ({ username, servers }) => {
   return (
     <div className={styles.container}>
-      <WindowContainer title={`${username || 'User'}'s servers`} style={{ minWidth: "50%" }}>
+      <WindowContainer
+        title={`${username || "User"}'s servers`}
+        style={{ minWidth: "50%" }}
+      >
         <div className={styles.serverList}>
           {Object.entries(servers).map(([serverId, server]) => (
-            <Link href={`/channels/${serverId}`}
+            <Link
+              href={`/channels/${serverId}`}
               key={serverId}
               className={styles.serverItem}
             >

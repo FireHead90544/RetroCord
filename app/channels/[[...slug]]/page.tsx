@@ -25,8 +25,14 @@ interface DiscordData {
   };
 }
 
-const ChannelsLanding = ({ params }: { params: Promise<{ slug?: string[] }> }) => {
-  const route = React.use(params).slug?.map((slug) => decodeURIComponent(slug)).join('/');
+const ChannelsLanding = ({
+  params,
+}: {
+  params: Promise<{ slug?: string[] }>;
+}) => {
+  const route = React.use(params)
+    .slug?.map((slug) => decodeURIComponent(slug))
+    .join("/");
 
   const [username, setUsername] = useState("");
   const [discordData, setDiscordData] = useState<DiscordData>({});
@@ -71,16 +77,22 @@ const ChannelsLanding = ({ params }: { params: Promise<{ slug?: string[] }> }) =
   }, [route, router, discordData, loading]);
 
   if (loading) {
-    return route?.split("/").length === 1 ? <ServerLanding username={username} servers={discordData} /> : <LoadingScreen title={`Welcome, ${username}!`} />;
+    return route?.split("/").length === 1 ? (
+      <ServerLanding username={username} servers={discordData} />
+    ) : (
+      <LoadingScreen title={`Welcome, ${username}!`} />
+    );
   }
 
   if (route === "@me") {
     return (
-      <div style={{
-        width: "100%",
-        height: "100%",
-        margin: "auto"
-      }}>
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          margin: "auto",
+        }}
+      >
         <HeadingLogo />
         <ServerLanding username={username} servers={discordData} />
       </div>

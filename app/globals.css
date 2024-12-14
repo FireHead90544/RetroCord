@@ -9,7 +9,6 @@
   margin: 0;
 }
 
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -23,7 +22,7 @@ body {
 }
 
 .main-content {
-  display:flex;
+  display: flex;
   flex: 1;
   width: 100%;
   justify-content: center;

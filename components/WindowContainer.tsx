@@ -8,7 +8,12 @@ interface WindowContainerProps {
   contentStyle?: React.CSSProperties;
 }
 
-const WindowContainer: React.FC<WindowContainerProps> = ({ title, children, style, contentStyle }) => (
+const WindowContainer: React.FC<WindowContainerProps> = ({
+  title,
+  children,
+  style,
+  contentStyle,
+}) => (
   <div className={styles.windowContainer} style={style}>
     <div className={styles.windowHeader}>
       <span className={styles.title}>{title}</span>
@@ -18,7 +23,9 @@ const WindowContainer: React.FC<WindowContainerProps> = ({ title, children, styl
         <button>X</button>
       </div>
     </div>
-    <div className={styles.windowContent} style={contentStyle}>{children}</div>
+    <div className={styles.windowContent} style={contentStyle}>
+      {children}
+    </div>
   </div>
 );
 

@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  font-family: 'MS Sans Serif', sans-serif;
+  font-family: "MS Sans Serif", sans-serif;
 }
 
 .serverList {
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #000000;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -27,17 +27,17 @@
 
 .serverItem:hover {
   background-color: #800080;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .serverItem:hover p {
-  color: #C0C0C0;
+  color: #c0c0c0;
 }
 
 .serverIcon {
   width: 40px;
   height: 40px;
-  background-color: #0000A0;
+  background-color: #0000a0;
   color: white;
   display: flex;
   align-items: center;
