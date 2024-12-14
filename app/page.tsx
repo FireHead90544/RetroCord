@@ -1,10 +1,15 @@
+import React from "react";
 import styles from "./page.module.css";
+import HeadingLogo from "@/components/HeadingLogo";
+import LoginWindow from "@/components/LoginWindow";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>RetroCord</h1>
-      <p>Hello, World!</p>
-    </main>
+    <div className={styles.container}>
+      <HeadingLogo />
+      <LoginWindow />
+    </div>
   );
-}
+};
+
+export default Home;
