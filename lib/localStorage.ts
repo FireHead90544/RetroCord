@@ -1,22 +1,29 @@
 const DEFAULT_DATA = {
   123456789012345678: {
-    name: "Codedex",
+    name: "Codédex",
     channels: {
       1234567890123456781: {
         name: "general",
         messages: [
           {
             0: {
-              content: "Hi there",
+              content: "Hello everyone :3",
               user: "_rudra.xd_",
               timestamp: 1627891234,
             },
           },
           {
             1: {
-              content: "Welcome to the server!",
-              user: "john_doe",
+              content: "Please drop a like, if you liked it!",
+              user: "_rudra.xd_",
               timestamp: 1627891250,
+            },
+          },
+          {
+            2: {
+              content: "Please drop a like, if you liked it!",
+              user: "yay.less.gooo1",
+              timestamp: 1627891460,
             },
           },
         ],
@@ -162,7 +169,7 @@ export const getLocalStorage = (key: string) => {
   return JSON.parse(data);
 };
 
-export const setLocalStorage = (key: string, value: any) => {
+export const setLocalStorage = (key: string, value: string) => {
   if (typeof window === "undefined") return;
   localStorage.setItem(key, JSON.stringify(value));
 };
