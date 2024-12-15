@@ -1,38 +1,84 @@
-# RetroCord
+# RetroCord 🌐
 
-Discord, re-designed in 90s retro-style for Codedex Mini Holiday Hackathon 2024.
+[![Retro Style](https://img.shields.io/badge/Style-90s/Retro-red.svg)](https://github.com/FireHead90544/RetroCord)
+[![Windows 98](https://img.shields.io/badge/Theme-Windows%2098-blue.svg)](https://github.com/FireHead90544/RetroCord)
+[![Discord Clone](https://img.shields.io/badge/Clone-Discord-purple.svg)](https://github.com/FireHead90544/RetroCord)
 
-## Getting Started
+> Discord, redesigned in Windows 98 retro-style built for the Codedex Mini Holiday Hackathon 2024.
 
-First, run the development server:
+[**Live Demo**](https://yayretrocord.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎮 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+RetroCord reimagines Discord with a classic Windows 98 aesthetic. Experience the modern communication platform through the lens of 90s design, complete with classic UI elements, retro color schemes, and nostalgic interactions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Authentic Windows 98 UI**: Experience 90s retro vibe with this one
+- **Garbage Authentication**: Welp, what would you ask more from a static website? Enter username, get in.
+- **Servers & Channels**: Organize conversations in different servers & channels just like our beloved discord.
+- **Real-Time Chat**: Send and receive messages in a retro-styled interface. Real time? Or is it?
+- **Responsive Design**: Works seamlessly on both desktop and mobile devices
+- **Local Storage**: Persistent data storage using browser's local storage. Eh? Database is for noobs.
+- **Retro Animations**: Classic Windows 98-style effects, transitions and animations.
+- **Hit Counter**: Classic webpage hit counter for that authentic 90s feel. It scams though.
 
-## Learn More
+## 🌌 Routes
 
-To learn more about Next.js, take a look at the following resources:
+Uhm yeah, it does replicate the most basic api routes discord offers.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Route                            | Use                                                                        |
+|----------------------------------|----------------------------------------------------------------------------|
+| `/`                              | Landing/Login, redirects to `/app`                                         |
+| `/app`                           | Loading screen, redirects to `/channels/@me`                               |
+| `/channels`                      | Garbage catch heh, redirects to `/app`                                     |
+| `/channels/@me`                  | Shows server list                                                          |
+| `/channels/:serverID`            | Redirects to first channel of the server, `/channels/:serverID/:channelID` |
+| `/channels/:serverID/:channelID` | Shows the chat window to chat in a particular channel                      |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Built With
 
-## Deploy on Vercel
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - For type-safe code
+- **CSS Modules** - For scoped styling
+- **Local Storage API** - For data persistence (No database/backend hehe)
+- **Lucide Icons** - For minimal, retro-styled icons
+- **React Fast Marquee** - For retro text animations (Who doesn't know marquee?)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/FireHead90544/RetroCord.git
+   ```
+
+2. **Install dependencies**
+   ```bash
+   cd RetroCord
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open [http://localhost:3000](http://localhost:3000) in your browser**
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/FireHead90544/RetroCord/issues).
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.
+
+## 🙏 Acknowledgments
+
+- Inspired by Discord's interface
+- Windows 98 design system
+- [Codedex](https://codedex.io) for hosting the hackathon
+
+---
+
+<p align="center">Made with 💜 by <a href="https://github.com/FireHead90544">FireHead90544</a></p>
