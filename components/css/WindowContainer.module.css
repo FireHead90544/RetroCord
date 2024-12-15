@@ -1,8 +1,8 @@
 .windowContainer {
   border: 2px solid black;
-  background-color: #ffffff;
+  background-color: #36393e;
   margin: 10px;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 0 #18191c;
   max-width: 90%;
 }
 
@@ -11,8 +11,8 @@
 }
 
 .windowHeader {
-  background-color: #800080;
-  color: white;
+  background-color: #6c81ca;
+  color: #ffffff;
   padding: 5px;
   font-weight: bold;
   display: flex;
@@ -21,7 +21,7 @@
 }
 
 .windowButtons button {
-  background-color: #c0c0c0;
+  background-color: rgba(255, 255, 255, 0.6);
   border: 1px solid black;
   margin-left: 5px;
   width: 20px;
