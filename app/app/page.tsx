@@ -19,7 +19,7 @@ const AppLoading = () => {
 
     const timer = setTimeout(() => {
       router.push("/channels/@me");
-    }, 5000); // Fake loading
+    }, 3500); // Fake loading
 
     return () => clearTimeout(timer);
   }, [router]);

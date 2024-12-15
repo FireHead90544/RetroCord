@@ -10,6 +10,7 @@ import HeadingLogo from "@/components/HeadingLogo";
 interface DiscordData {
   [serverId: string]: {
     name: string;
+    image: string;
     channels: {
       [channelId: string]: {
         name: string;
@@ -64,13 +65,13 @@ const ChannelsLanding = ({
       const server = discordData[serverId];
 
       if (!server) {
-        redirect("/channels/@me");
+        router.push("/channels/@me");
       } else {
         const firstChannelId = Object.keys(server.channels)[0];
         if (!firstChannelId) {
-          redirect("/channels/@me");
+          router.push("/channels/@me");
         } else {
-          redirect(`/channels/${serverId}/${firstChannelId}`);
+          router.push(`/channels/${serverId}/${firstChannelId}`);
         }
       }
     }

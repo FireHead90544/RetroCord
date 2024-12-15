@@ -7,7 +7,7 @@ const Footer: React.FC<{ text: string }> = ({ text }) => {
   return (
     <footer className={styles.footer}>
       <PageHitCounter />
-      <MarqueeTag className={styles.marquee} style={{ background: "#0a0a0a" }}>
+      <MarqueeTag className={styles.marquee} style={{ background: "#292b2f" }}>
         {text}
       </MarqueeTag>
     </footer>
