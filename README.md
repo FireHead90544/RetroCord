@@ -8,6 +8,8 @@
 
 [**Live Demo**](https://tryretrocord.vercel.app/)
 
+https://github.com/user-attachments/assets/e29817cd-4e5f-42a3-b5d7-29b1f6a51fe7
+
 ## 🎮 Overview
 
 RetroCord reimagines Discord with a classic Windows 98 aesthetic. Experience the modern communication platform through the lens of 90s design, complete with classic UI elements, retro color schemes, and nostalgic interactions.
