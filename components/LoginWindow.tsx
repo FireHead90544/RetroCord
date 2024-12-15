@@ -39,7 +39,7 @@ const LoginWindow = () => {
           Enter Chat
         </button>
       </form>
-      <div className={styles.hint}>New to Discord? Pick a classy username!</div>
+      <div className={styles.hint}>New to Discord? <span style={{ color: "#7386C8" }}>Pick a classy username!</span></div>
     </WindowContainer>
   );
 };
