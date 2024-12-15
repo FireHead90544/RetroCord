@@ -1,0 +1,19 @@
+.imgStyle{
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 995px) {
+    .imgStyle {
+        width: 40%;
+    }
+}
+
+@media (max-width: 565px) {
+    .imgStyle {
+        width: 60%;
+    }
+}
