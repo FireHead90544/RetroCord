@@ -1,6 +1,6 @@
 :root {
-  --background: #c0c0c0;
-  --foreground: #0a0a0a;
+  --background: #1e2124;
+  --foreground: #36393e;
 }
 
 * {
@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #c0c0c0;
+  background-color: #1e2124;
 }
 
 .main-content {
