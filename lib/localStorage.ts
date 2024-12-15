@@ -1,9 +1,10 @@
 const DEFAULT_DATA = {
   123456789012345678: {
     name: "Codédex",
+    image: "/codedex.png",
     channels: {
       1234567890123456781: {
-        name: "general",
+        name: "holiday-hackathon",
         messages: [
           {
             0: {
@@ -21,7 +22,7 @@ const DEFAULT_DATA = {
           },
           {
             2: {
-              content: "Biee :)",
+              content: "Good luck, everyone. Happy hacking.",
               user: "yay.less.gooo1",
               timestamp: 1627891460,
             },
@@ -30,11 +31,11 @@ const DEFAULT_DATA = {
       },
       9876543210098765431: { name: "memes", messages: [] },
       2345678901234567890: {
-        name: "random",
+        name: "general",
         messages: [
           {
             0: {
-              content: "Random chat",
+              content: "It is what it is, yay.",
               user: "alice123",
               timestamp: 1627891300,
             },
@@ -58,6 +59,7 @@ const DEFAULT_DATA = {
   },
   234567890123456789: {
     name: "DevelopersHub",
+    image: "/developers-hub.png",
     channels: {
       2345678901234567891: { name: "announcements", messages: [] },
       3456789012345678902: {
@@ -85,6 +87,7 @@ const DEFAULT_DATA = {
   },
   345678901234567890: {
     name: "GamingZone",
+    image: "/gaming-zone.png",
     channels: {
       3456789012345678901: {
         name: "general",
@@ -105,6 +108,7 @@ const DEFAULT_DATA = {
   },
   456789012345678901: {
     name: "ArtCommunity",
+    image: "/art-community.png",
     channels: {
       4567890123456789015: { name: "general", messages: [] },
       5678901234567890126: {
@@ -124,6 +128,7 @@ const DEFAULT_DATA = {
   },
   567890123456789012: {
     name: "BookClub",
+    image: "/book-club.png",
     channels: {
       5678901234567890127: {
         name: "general",
