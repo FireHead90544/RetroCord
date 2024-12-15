@@ -4,7 +4,7 @@
 [![Windows 98](https://img.shields.io/badge/Theme-Windows%2098-blue.svg)](https://github.com/FireHead90544/RetroCord)
 [![Discord Clone](https://img.shields.io/badge/Clone-Discord-purple.svg)](https://github.com/FireHead90544/RetroCord)
 
-> Discord, redesigned in Windows 98 retro-style built for the Codedex Mini Holiday Hackathon 2024.
+> Discord, redesigned in Windows 98 retro-style built for the Codédex Mini Holiday Hackathon 2024.
 
 [**Live Demo**](https://yayretrocord.vercel.app/)
 

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "RetroCord",
-  description: "Discord, redesigned in 90s retro-style for Codedex Mini Holiday Hackathon 2024.",
+  description: "Discord, redesigned in 90s retro-style for Codédex Mini Holiday Hackathon 2024.",
   authors: {
     name: "Rudransh Joshi",
     url: "https://w3rudra.vercel.app/",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     title: "RetroCord",
-    description: "Discord, redesigned in 90s retro-style for Codedex Mini Holiday Hackathon 2024.",
+    description: "Discord, redesigned in 90s retro-style for Codédex Mini Holiday Hackathon 2024.",
     images: "/og.png"
   }
 };
