@@ -32,7 +32,7 @@ const LoadingScreen: React.FC<{ title: string }> = ({ title }) => {
 
   return (
     <div className={styles.container}>
-      <WindowContainer title="Loading...">
+      <WindowContainer title="Loading..." contentStyle={{ backgroundColor: "#2f3137" }}>
         <div className={styles.content}>
           <h2 className={styles.greeting}>{title}</h2>
           <div className={styles.loader}>

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #c0c0c0;
+  background-color: #1e2124;
   font-family: "MS Sans Serif", sans-serif;
 }
 
@@ -12,7 +12,7 @@
 
 .greeting {
   font-size: 1.5rem;
-  color: #000;
+  color: #d2d4d8;
   margin-bottom: 1.5rem;
 }
 
@@ -25,11 +25,11 @@
 .loadingBar {
   width: 15px;
   height: 25px;
-  background-color: #800080;
+  background-color: #ffffff;
   margin: 0.4px 2px;
 }
 
 .message {
   font-style: italic;
-  color: #0000a0;
+  color: #6f7cae;
 }
