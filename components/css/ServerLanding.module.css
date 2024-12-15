@@ -17,28 +17,28 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #ffffff;
-  border: 1px solid #000000;
+  background-color: #393c43;
+  border: 2px solid #4F545C;
   cursor: pointer;
   transition: background-color 0.2s;
-  color: green;
+  color: #b3b7bd;
   text-decoration: none;
 }
 
 .serverItem:hover {
-  background-color: #800080;
-  color: #ffffff;
+  background-color: #6c81ca;
+  color: #f3f0f0;
 }
 
 .serverItem:hover p {
-  color: #c0c0c0;
+  color: #1e2124;
 }
 
 .serverIcon {
   width: 40px;
   height: 40px;
   background-color: #0000a0;
-  color: white;
+  color: #36393e;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -20,6 +20,7 @@ const ServerLanding: React.FC<ServerLandingProps> = ({ username, servers }) => {
       <WindowContainer
         title={`${username || "User"}'s servers`}
         style={{ minWidth: "50%" }}
+        contentStyle={{ background: "#2f3136" }}
       >
         <div className={styles.serverList}>
           {Object.entries(servers).map(([serverId, server]) => (

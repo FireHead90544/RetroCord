@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import Link from "next/link";
-import { MessageSquare, Send } from 'lucide-react';
+import { Hash as MessageSquare, Send } from 'lucide-react';
 import WindowContainer from './WindowContainer';
 import HeadingLogo from './HeadingLogo';
 import { setLocalStorage, getLocalStorage } from "@/lib/localStorage";
@@ -90,7 +90,7 @@ const ChannelView: React.FC<ChannelViewProps> = ({
         flexDirection: "column",
       }}>
         <HeadingLogo onChannelsPage={true} />
-        <WindowContainer title="Servers" style={{ minWidth: "auto", maxWidth: "100%", height: "100%" }}>
+        <WindowContainer title="Servers" style={{ minWidth: "auto", maxWidth: "100%", height: "100%",background: "#1e2124" }}>
           <div className={styles.serverList}>
             {Object.entries(allServers).map(([sId, s]) => (
               <Link
@@ -112,7 +112,7 @@ const ChannelView: React.FC<ChannelViewProps> = ({
           display: "flex",
           width: "100%"
       }} className={styles.subcontainer}>
-        <WindowContainer title={`Channels`} style={{ minWidth: "auto", maxWidth: "100%" }}>
+        <WindowContainer title={`Channels`} style={{ minWidth: "auto", maxWidth: "100%", background: "#2e3136" }}>
           <div className={styles.channelList}>
             {Object.entries(server.channels).map(([cId, c]) => (
               <Link
@@ -120,7 +120,7 @@ const ChannelView: React.FC<ChannelViewProps> = ({
                 key={cId}
                 className={`${styles.channelItem} ${cId === channelId ? styles.active : ''}`}
               >
-                <MessageSquare size={16} />
+                <MessageSquare size={16} color={cId === channelId ? "#dcddde" : "#66686c"}/>
                 {c.name.replace(" ", "-")}
               </Link>
             ))}
