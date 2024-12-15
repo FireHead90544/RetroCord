@@ -1,6 +1,6 @@
 .counterContainer {
-  background-color: #000;
-  color: lime;
+  background-color: #292b2f;
+  color: #f9a51a;
   padding: 5px 10px;
   font-family: monospace;
   text-align: center;
@@ -14,7 +14,7 @@
 
 .counterNumber {
   font-weight: bold;
-  color: #0f0;
+  color: #43b581;
   margin-left: 5px;
 }
 
