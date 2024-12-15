@@ -20,6 +20,7 @@ interface Message {
   
   interface Server {
     name: string;
+    image: string;
     channels: {
       [channelId: string]: Channel;
     };
@@ -97,9 +98,7 @@ const ChannelView: React.FC<ChannelViewProps> = ({
                 key={sId}
                 className={`${styles.serverItem} ${sId === serverId ? styles.active : ''}`}
               >
-                <div className={styles.serverIcon}>
-                  {s.name[0].toUpperCase()}
-                </div>
+                <img src={s.image} className={styles.serverIcon} />
                 <div className={styles.serverInfo}>
                   <h3>{s.name}</h3>
                   <p>{Object.keys(s.channels).length} channels</p>

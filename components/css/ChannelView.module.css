@@ -41,6 +41,7 @@
   border-radius: 4px;
   font-weight: bold;
   margin-right: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .serverItem:hover,

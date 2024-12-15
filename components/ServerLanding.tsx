@@ -8,6 +8,7 @@ interface ServerLandingProps {
   servers: {
     [serverId: string]: {
       name: string;
+      image: string;
       channels: object;
     };
   };
@@ -27,9 +28,7 @@ const ServerLanding: React.FC<ServerLandingProps> = ({ username, servers }) => {
               key={serverId}
               className={styles.serverItem}
             >
-              <div className={styles.serverIcon}>
-                {server.name[0].toUpperCase()}
-              </div>
+              <img src={server.image} className={styles.serverIcon} />
               <div className={styles.serverInfo}>
                 <h3>{server.name}</h3>
                 <p>{Object.keys(server.channels).length} channels</p>
