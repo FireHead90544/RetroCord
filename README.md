@@ -6,7 +6,7 @@
 
 > Discord, redesigned in Windows 98 retro-style built for the Codédex Mini Holiday Hackathon 2024.
 
-[**Live Demo**](https://yayretrocord.vercel.app/)
+[**Live Demo**](https://tryretrocord.vercel.app/)
 
 ## 🎮 Overview
 
